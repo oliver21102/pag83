@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+	 
+    <script src="js/jquery.min.js"></script>
+<script  src="js/jquery-ui.min.js"></script>
+<script  src="js/jquery.ui.touch-punch.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/OZG.css">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<style >
+  
+  .subindice{
+ vertical-align: sub;
+  }
+
+  .superindice{
+
+  }
+
+.palabras{
+       position: absolute;
+background-color: aqua;
+background: #2a6e7a;
+z-index: 5;
+width: 13%;
+height: 8%;
+cursor: pointer;
+color: #fff;
+
+ text-align: center;
+  vertical-align: middle; 
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080;    
+
+    }
+
+
+    .espacio{
+   position: absolute;
+background-color: aqua;
+background: #fff;
+z-index: 5;
+width: 13%;
+height: 8%;
+ 
+
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080; 
+
+    }
+
+
+      .respuesta{
+    	position: absolute;
+    	z-index: 5;
+    	width: 12%;
+       height: 6%;
+       font-weight: bold;
+    }
+
+    #panel{
+
+  position:  absolute;
+
+  background-color: #F8EBA2;
+ 
+  width: 65%;
+  height: 60%;
+  top: 25%;
+  left: 28%;
+
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080; 
+
+z-index: 4;
+    }
+
+.centrado{
+   padding-top: 10%;
+}
+
+ .guia{
+    position:  absolute;
+  height: 7%;
+  width: 3%;
+  z-index: 9;
+   }
+
+</style>
+</head>
+<body onload="inicio()" onresize="ajustar()" class="noseleccionable">
+
+ <img src="imagenes/fondo.png"  id="fondo">
+ <div id="consigna">Arrastra el ácido oxácido de acuerdo al nombre que se indica.</div>
+
+
+  <div  id="a1"class="palabras" style="left:6%; top: 21%;  z-index:4;" > <div class="centrado">Óxido de plata  </div> </div>
+  <div  id="a2"class="palabras" style="left:6%; top: 31%;  z-index:4;"> <div class="centrado">Óxido áurico</div>  </div>
+  <div  id="a3"class="palabras" style="left:6%; top: 41%;  z-index:4;"> <div style="padding-top:5%;" >Óxido mercurioso</div></div>
+  <div  id="a4"class="palabras" style="left:6%; top: 51%;  z-index:4;"><div  style="padding-top:5%;">Óxido mercúrico</div></div>
+  <div  id="a5"class="palabras" style="left:6%; top: 61%;  z-index:4;"><div  style="padding-top:5%;">óxido hipobromoso</div></div>
+  <div  id="a6"class="palabras" style="left:6%; top: 71%;  z-index:4;"><div class="centrado">Óxido cloroso</div></div>
+  <div  id="a7"class="palabras" style="left:6%; top: 81%;  z-index:4;"><div class="centrado" >Óxido yódico</div></div>
+
+
+    <img src="imagenes/guia.png" style="left:48%; top:35.5%; " class="guia" >
+    <img src="imagenes/guia.png" style="left:48%; top:45.5%; " class="guia" >
+    <img src="imagenes/guia.png" style="left:48%; top:55.5%; " class="guia" >
+    <img src="imagenes/guia.png" style="left:48%; top:65.5%; " class="guia" >
+
+    <img src="imagenes/guia.png" style="left:77%; top:35.5%; " class="guia" >
+    <img src="imagenes/guia.png" style="left:77%; top:45.5%; " class="guia" >
+    <img src="imagenes/guia.png" style="left:77%; top:55.5%; " class="guia" >
+  
+
+    <div   class="respuesta" style="left:52%; top:37%;">Ag<span class="subindice">2</span>O</div>
+    <div   class="respuesta" style="left:52%; top:47%;">Au<span class="subindice">2</span>O<span class="subindice">3</span></div>
+    <div   class="respuesta" style="left:52%; top:57%;">Hg<span class="subindice">2</span>O</div>
+    <div   class="respuesta"style="left:52%; top:67%;">HgO</div>
+
+    <div   class="respuesta" style="left:81%; top:37%;">Br<span class="subindice">2</span>O</div>
+    <div   class="respuesta" style="left:81%; top:47%;">Cl<span class="subindice">2</span>O<span class="subindice">3</span></div>
+    <div   class="respuesta" style="left:81%; top:57%;">I<span class="subindice">2</span>O<span class="subindice">5</span></div>
+
+    <div id="n1" class="espacio" style="left:34%; top:35%;"></div>
+    <div id="n2" class="espacio" style="left:34%; top:45%;"></div>
+    <div id="n3" class="espacio" style="left:34%; top:55%;"></div>
+    <div id="n4" class="espacio" style="left:34%; top:65%;"></div>
+
+    <div id="n5" class="espacio" style="left:63%; top:35%;"></div>
+    <div id="n6" class="espacio" style="left:63%; top:45%;"></div>
+    <div id="n7" class="espacio" style="left:63%; top:55%;"></div>
+
+     <div id="panel">
+
+
+     </div>
+
+ <script >
+  function inicio(){
+ ajustar();
+ sonidoFondo();
+  }
+
+
+  function ajustar(){
+   var alto=$(window).height();
+  var ancho=$(window).width();
+   var tamanio= ancho/45;
+
+  var con= document.getElementById("consigna");
+ // con.style.fontSize=""+tamanio+"pt";
+ con.style.fontSize=""+tamanio+"pt";
+  var resp= document.getElementsByClassName("respuesta");
+  var pal= document.getElementsByClassName("palabras");
+
+  var vsubin=document.getElementsByClassName("subindice");
+
+  for(var u=0; u<vsubin.length; u++){
+     vsubin[u].style.fontSize=""+(tamanio*0.6)+"pt";
+  }
+
+  for(var i=0; i<resp.length; i++ ){
+     resp[i].style.fontSize=""+tamanio+"px";
+     pal[i].style.fontSize=""+tamanio*0.8+"px";
+       
+  }
+
+
+  }
+
+
+$(empezar);
+  function empezar(){
+ 
+
+  desordenar("palabras");
+ var pal= document.getElementsByClassName('palabras');
+  var esp= document.getElementsByClassName('espacio');
+    for(var i=0; i< pal.length; i++){
+
+     $("#"+pal[i].id).draggable({containment: "window",revert:true,drag:arrastrar});
+      $("#"+esp[i].id).droppable( {accept:"#"+ pal[i].id+"",drop:soltar});
+    }
+  }
+
+
+function sonidoFondo(){
+  var audio = document.createElement("audio");
+ 
+    audio.src = "sonido/sonidoF.mp3";
+    audio.play();
+}
+
+
+ </script>
+ <script  src="js/OZGFunciones2.js"></script>
+</body>
+</html>
